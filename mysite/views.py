@@ -6,4 +6,3 @@ def index(request):
         'title': 'Really site',
     }
     return render(request, 'mysite/index.html', context)
-    # return HttpResponse('Hello World')
