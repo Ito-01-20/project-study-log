@@ -8,6 +8,7 @@ def index(request):
     paginator = Paginator(objs, 2)
     page_number = request.GET.get('page')
     context = {
+        'articles': objs,
         'page_obj': paginator.get_page(page_number),
         'page_number': page_number,
     }
