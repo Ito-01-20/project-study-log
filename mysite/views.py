@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from blog.models import Article
 from mysite.forms import UserCreationForm
+from django.contrib import messages
 
 def index(request):
     objs = Article.objects.all()
@@ -19,9 +20,10 @@ def signup(request):
     context = {}
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        print(form)
         if form.is_valid():
-            user = form.save(commit=False)
+            user = form.sava(commit=False)
             # user.is_active = False
             user.save()
+            messages.success(request, '登録完了!')
+            return redirect('/')
     return render(request, 'mysite/auth.html', context)
