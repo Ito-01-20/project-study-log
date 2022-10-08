@@ -1,41 +1,8 @@
 {% extends 'mysite/base.html' %}
  
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <div class="text-right">
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </div>
-      </div>
-    </div>
-   </div>
-  </nav>
 
   <div class="container">
-    <header class="py-3">
-        <div class="row flex-nowrap justify-content-center align-item-center">
-            <!-- <div class="col-4 text-center">
-                <h1 class="display-4 font-italic">ReallySite</h1>
-            </div> -->
-        </div>
-    </header>
-
-    <div class="py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-            <a class="p-2 link-secondary" href="#">ブログ</a>
-            <a class="p-2 link-secondary" href="#">お問い合わせ</a>
-            <a class="p-2 link-secondary" href="#">メニュー３</a>
-        </nav>
-    </div>
     <div class="p-4 p-md-5 mb-4 rounded bg-warning">
         <div class="col-md-6 px-0">
             <h1 class="display-4 font-italic">Django講座</h1>
@@ -86,7 +53,7 @@
                 <h2 class="blog-post-title">{{ obj.title }}</h2>
                 <p class="blog-post-meta">{{ obj.created_at }} by <a href="#">{{ obj.author }}</a></p>
                 <p>{{ obj.text }}</p>
-                <a href="/blog/{{obj.id}}/" class="stretched-link">続きはこちら</a>
+                <a href="/blog/{{obj.id}}/">続きはこちら</a>
             </div>
             <hr>
             {% endfor %}
@@ -106,11 +73,5 @@
         </aside>
     </div>
 </main>
-
-<footer class="border-top py-5 text-center bg-light mt-4">
-    <p>
-        <a href="/">トップに戻る</a>
-    </p>
-</footer>
 
 {% endblock %}
