@@ -14,6 +14,6 @@ class Profile(models.Model):
     
     city = models.CharField(default="", max_length=100)
     
-    adress = models.CharField(default="", max_length=200)
+    address = models.CharField(default="", max_length=200)
     
     
