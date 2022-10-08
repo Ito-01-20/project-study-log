@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,6 +29,15 @@ SECRET_KEY = 'django-insecure-i0(0n4yd&n)lnm2$8!mam*-(i*nqqa4=4--k&ji=+fj--kzwtu
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
+# if DEBUG:
+#     import yaml
+#     with open(os.path.join(BASE_DIR, 'secrets', 'secret_dev.yaml')) as file:
+#         objs = yaml.safe_load(file)
+#         for obj in objs:
+#             os.environ[obj] = objs[obj]
+# else:
+#     pass
 
 
 # Application definition
@@ -144,6 +154,14 @@ MESSAGE_TAGS = {
     messages.INFO: 'rounded-0 alert alert-info',
     messages.DEBUG: 'rounded-0 alert alert-secondary',
     }
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# ENAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+# EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 
 
 
